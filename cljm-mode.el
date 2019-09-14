@@ -113,15 +113,6 @@
 (defvar cljm-mode-map
   (let ((map (make-sparse-keymap)))
     (set-keymap-parent map prog-mode-map)
-    (define-key map (kbd "C-c SPC") #'cljm-align)
-    (easy-menu-define cljm-mode-menu map "Clojure Mode Menu"
-      '("Clojure"
-        ["Align expression" cljm-align]
-        ("Documentation"
-         ["View a Clojure guide" cljm-view-guide]
-         ["View a Clojure reference section" cljm-view-reference-section]
-         ["View the Clojure cheatsheet" cljm-view-cheatsheet]
-         ["View the Clojure style guide" cljm-view-style-guide])))
     map)
   "Keymap for Clojure mode.")
 
