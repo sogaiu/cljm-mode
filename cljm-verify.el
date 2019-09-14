@@ -7,8 +7,7 @@
 (defcustom cljm-verify-major-mode t
   "If non-nil, warn when activating the wrong `major-mode'."
   :type 'boolean
-  :safe #'booleanp
-  :package-version '(cljm-mode "5.3.0"))
+  :safe #'booleanp)
 
 (defun cljm--check-wrong-major-mode ()
   "Check if the current `major-mode' matches the file extension.

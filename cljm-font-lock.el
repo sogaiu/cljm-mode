@@ -12,13 +12,11 @@
 
 (defface cljm-keyword-face
   '((t (:inherit font-lock-constant-face)))
-  "Face used to font-lock Clojure keywords (:something)."
-  :package-version '(cljm-mode . "3.0.0"))
+  "Face used to font-lock Clojure keywords (:something).")
 
 (defface cljm-character-face
   '((t (:inherit font-lock-string-face)))
-  "Face used to font-lock Clojure character literals."
-  :package-version '(cljm-mode . "3.0.0"))
+  "Face used to font-lock Clojure character literals.")
 
 
 ;;; #_ comments font-locking
@@ -46,8 +44,7 @@ what is considered a comment (affecting font locking).
   :type '(choice (const :tag "Reader macro `#_' and `(comment)'"
                         cljm-reader-and-comment-regexp)
                  (other :tag "Reader macro `#_' only"
-                        cljm--comment-macro-regexp))
-  :package-version '(cljm-mode . "5.7.0"))
+                        cljm--comment-macro-regexp)))
 
 (defun cljm-search-comment-macro-internal (limit)
   "Search for a comment forward stopping at LIMIT."

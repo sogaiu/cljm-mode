@@ -23,7 +23,6 @@
 Out-of-the box `cljm-mode' understands lein, boot, gradle,
  shadow-cljs and tools.deps."
   :type '(repeat string)
-  :package-version '(cljm-mode . "5.0.0")
   :safe (lambda (value)
           (and (listp value)
                (cl-every 'stringp value))))
@@ -31,14 +30,12 @@ Out-of-the box `cljm-mode' understands lein, boot, gradle,
 (defcustom cljm-project-root-function #'cljm-project-root-path
   "Function to locate clojure project root directory."
   :type 'function
-  :risky t
-  :package-version '(cljm-mode . "5.7.0"))
+  :risky t)
 
 (defcustom cljm-cache-project-dir t
   "Whether to cache the results of `cljm-project-dir'."
   :type 'boolean
-  :safe #'booleanp
-  :package-version '(cljm-mode . "5.8.0"))
+  :safe #'booleanp)
 
 (defvar-local cljm-cached-project-dir nil
   "A project dir cache used to speed up related operations.")

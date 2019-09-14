@@ -11,7 +11,6 @@
 
 (defcustom cljm-align-reader-conditionals nil
   "Whether to align reader conditionals, as if they were maps."
-  :package-version '(cljm-mode . "5.10")
   :safe #'booleanp
   :type 'boolean)
 
@@ -19,7 +18,6 @@
   '("let" "when-let" "when-some" "if-let" "if-some" "binding" "loop"
     "doseq" "for" "with-open" "with-local-vars" "with-redefs")
   "List of strings matching forms that have binding forms."
-  :package-version '(cljm-mode . "5.1")
   :safe #'listp
   :type '(repeat string))
 
@@ -28,7 +26,6 @@
     "clojure.core/condp" "clojure.core/cond" "clojure.core/cond->"
     "clojure.core/cond->>" "clojure.core/case" "clojure.test/are")
   "List of strings identifying cond-like forms."
-  :package-version '(cljm-mode . "5.1")
   :safe #'listp
   :type '(repeat string))
 
@@ -113,7 +110,6 @@ Place point as in `cljm--position-for-alignment'."
 
 (defcustom cljm-align-separator cljm--align-separator-newline-regexp
   "The separator that will be passed to `align-region' when performing vertical alignment."
-  :package-version '(cljm-mode . "5.10")
   :type `(choice
           (const
            :tag
@@ -133,7 +129,6 @@ instance, selecting a map a hitting \\<cljm-mode-map>`\\[indent-for-tab-command]
 will align the values like this:
     {:some-key 10
      :key2     20}"
-  :package-version '(cljm-mode . "5.1")
   :safe #'booleanp
   :type 'boolean)
 
