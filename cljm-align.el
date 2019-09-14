@@ -8,6 +8,8 @@
 (require 'cljm-tidy)
 
 (require 'align)
+(require 'cl-lib)
+(require 'newcomment)
 
 (defcustom cljm-align-reader-conditionals nil
   "Whether to align reader conditionals, as if they were maps."

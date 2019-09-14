@@ -10,6 +10,8 @@
 
 (require' cljm-motion)
 
+(require 'cl-lib)
+
 (defface cljm-keyword-face
   '((t (:inherit font-lock-constant-face)))
   "Face used to font-lock Clojure keywords (:something).")

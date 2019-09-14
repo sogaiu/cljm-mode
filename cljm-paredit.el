@@ -11,6 +11,9 @@
 
 (require 'cljm-indent)
 
+(require 'cl-lib)
+(require 'subr-x)
+
 (defun cljm-space-for-delimiter-p (endp delim)
   "Prevent paredit from inserting useless spaces.
 See `paredit-space-for-delimiter-predicates' for the meaning of

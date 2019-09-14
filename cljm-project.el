@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-;; XXX: necessary here?
+(require 'cl-lib)
 (require 'project)
 
 ;; project.el integration

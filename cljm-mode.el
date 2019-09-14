@@ -89,11 +89,9 @@
 (require 'cljm-refs)
 (require 'cljm-verify)
 
-(require 'cl-lib)
 (require 'imenu)
-(require 'newcomment)
-(require 'subr-x)
 (require 'lisp-mnt)
+(require 'newcomment)
 (require 'project)
 
 (defgroup cljm nil

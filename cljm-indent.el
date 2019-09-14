@@ -12,6 +12,9 @@
 (require 'cljm-motion)
 (require 'cljm-tidy)
 
+(require 'cl-lib)
+(require 'subr-x)
+
 (defcustom cljm-use-backtracking-indent t
   "When non-nil, enable context sensitive indentation."
   :type 'boolean
