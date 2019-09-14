@@ -96,8 +96,6 @@
 (require 'lisp-mnt)
 (require 'project)
 
-(declare-function lisp-fill-paragraph  "lisp-mode" (&optional justify))
-
 (defgroup cljm nil
   "Major mode for editing Clojure code."
   :prefix "cljm-"
