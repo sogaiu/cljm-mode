@@ -4,12 +4,18 @@
 
 ;;; Code:
 
+(require 'cljm-cache)
+
 (require 'cl-lib)
 (require 'project)
 
 ;; project.el integration
 (cl-defmethod project-roots ((project (head clojure)))
   (list (cdr project)))
+
+(defun cljm-project-relative-path (path)
+  "Denormalize PATH by making it relative to the project root."
+  (file-relative-name path (cljm-project-dir)))
 
 (defcustom cljm-build-tool-files
   '("project.clj"      ; Leiningen
@@ -31,14 +37,6 @@ Out-of-the box `cljm-mode' understands lein, boot, gradle,
   "Function to locate clojure project root directory."
   :type 'function
   :risky t)
-
-(defcustom cljm-cache-project-dir t
-  "Whether to cache the results of `cljm-project-dir'."
-  :type 'boolean
-  :safe #'booleanp)
-
-(defvar-local cljm-cached-project-dir nil
-  "A project dir cache used to speed up related operations.")
 
 (defun cljm-project-dir (&optional dir-name)
   "Return the absolute path to the project's root directory.

@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+(require 'cljm-font-lock)
+
 (defcustom cljm-docstring-fill-column fill-column
   "Value of `fill-column' to use when filling a docstring."
   :type 'integer

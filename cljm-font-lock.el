@@ -357,20 +357,6 @@ highlighted region)."
               font-lock-string-face))))
     font-lock-comment-face))
 
-(defun cljm-font-lock-setup ()
-  "Configures font-lock for editing Clojure code."
-  (setq-local font-lock-multiline t)
-  (add-to-list 'font-lock-extend-region-functions
-               #'cljm-font-lock-extend-region-def t)
-  (setq font-lock-defaults
-        '(cljm-font-lock-keywords    ; keywords
-          nil nil
-          (("+-*/.<>=!?$%_&:" . "w")) ; syntax alist
-          nil
-          (font-lock-mark-block-function . mark-defun)
-          (font-lock-syntactic-face-function
-           . cljm-font-lock-syntactic-face-function))))
-
 (defun cljm-font-lock-def-at-point (point)
   "Range between the top-most def* and the fourth element after POINT.
 Note that this means that there is no guarantee of proper font
@@ -407,6 +393,20 @@ locking in def* forms that are not at top level."
             (setq font-lock-end def-end
                   changed t)))))
     changed))
+
+(defun cljm-font-lock-setup ()
+  "Configures font-lock for editing Clojure code."
+  (setq-local font-lock-multiline t)
+  (add-to-list 'font-lock-extend-region-functions
+               #'cljm-font-lock-extend-region-def t)
+  (setq font-lock-defaults
+        '(cljm-font-lock-keywords    ; keywords
+          nil nil
+          (("+-*/.<>=!?$%_&:" . "w")) ; syntax alist
+          nil
+          (font-lock-mark-block-function . mark-defun)
+          (font-lock-syntactic-face-function
+           . cljm-font-lock-syntactic-face-function))))
 
 (defun cljm-string-start (&optional regex)
   "Return the position of the \" that begins the string at point.

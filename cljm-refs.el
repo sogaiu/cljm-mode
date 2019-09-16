@@ -67,8 +67,9 @@ The command will prompt you to select one of the available sections."
   (let ((section (completing-read "Select a reference section: "
                                   (mapcar #'car cljm-reference-sections))))
     (when section
-      (let ((section-url (concat cljm-reference-base-url
-                                 (cdr (assoc section cljm-reference-sections)))))
+      (let ((section-url
+             (concat cljm-reference-base-url
+                     (cdr (assoc section cljm-reference-sections)))))
         (browse-url section-url)))))
 
 (defconst cljm-cheatsheet-url "https://clojure.org/api/cheatsheet"
